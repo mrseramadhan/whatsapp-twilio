@@ -1,0 +1,41 @@
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand text-white" href="#"><span class="text-warning">Septian Ramadhan WABOT</span><br><span style="font-size: 10px; font">supported by Twillio</span></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+	</nav>
+	<div class="container well">
+		<br>
+		<div class="jumbotron">
+			<div class="row justify-content-md-center">
+				<h1>WHATS TEXT FORM {{name}}!!</h1>
+			</div>
+		</div>
+		<form action="{{base_url}}/send" method="get">
+			<div class="row justify-content-md-center">
+				<div class="col-md-6">
+					{% csrf_token %}
+					<div class="form-group">
+						<label>Number: </label>
+						<input type="text" class="form-control" name="number" placeholder="example +628000011111">
+
+						<label>Message: </label>
+						<input type="text" class="form-control" name="message" placeholder="example Good Afternoon Sir">
+					</div>
+					<input class="btn btn-primary float-right" type="submit">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
